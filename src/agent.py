@@ -3,15 +3,11 @@ from langchain_groq import ChatGroq
 from langchain_community.agent_toolkits import SQLDatabaseToolkit
 from langchain_community.utilities.sql_database import SQLDatabase
 
-def get_weather(city: str) -> str:
-    """Get the weather for a city."""
-    return f"It's sunny in {city}."
-
 model = ChatGroq(model="openai/gpt-oss-120b")
 
 agent = create_agent(
     model,
-    tools=[get_weather],
+    tools=[],
     system_prompt="You are a helpful assistant.",
 )
 
